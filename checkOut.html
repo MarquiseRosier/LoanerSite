@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<meta charset="utf-8"/>
+	<head>
+    <link rel="stylesheet" type="text/css" href="css/box.css"/>
+	</head>
+  <body>
+		<div class="form-control">
+      <form action="./../processing/checkOut.php" method="post">
+			  <br></br>
+        <label for="macloanernumber">Loaner Number 
+          <select name="loanerName">
+            <?php
+              include $_SERVER['DOCUMENT_ROOT'] . '/form/processing/loanerProc.php';
+            ?>
+          </select>
+        <br></br>
+        <label for="charger">Charger Issued?</label>
+          <input required type="radio" name="charger" value="1">Yes
+          <input required type="radio" name="charger" value="0">No
+        <br><br>
+      	<label for="FirstName" name="first">Firstname</label>
+				  <input required type="text" name="firstname"/>
+        <br></br>
+				<label for="LastName" name="last">Lastname</label>
+				  <input required type="text" name="lastname"/>
+        <br></br>
+        <label for="grade#">Grade</label>
+          <select name="gradeLevel">
+            <?php
+              include  $_SERVER['DOCUMENT_ROOT'] . '/form/processing/gradeProc.php'; 
+            ?>
+        </select>
+        <br></br>
+        <label for="teacher">Target Teacher</label>
+          <input type="text" name="teacherName"/>
+        <br></br>
+        <label for="iss">What is your Issue</label>
+          <textarea rows="2" cols="50" name="problem" wrap="hard">
+          </textarea>
+        <br></br>
+        <label for="employee">Employee</label>
+          <select name="employeeLast">
+            <?php
+              include $_SERVER['DOCUMENT_ROOT'] . '/form/processing/retrieveEmps.php';  
+            ?>
+          </select>
+        <br></br> 
+				<button type="submit" name="sub">Submit Dude </button>
+			</form>
+		</div>
+	 </body>
+</html>
