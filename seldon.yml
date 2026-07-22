@@ -1,0 +1,20 @@
+version: 1
+run:
+  url: https://google.com
+testCases:
+  # Skipped: seldon.yml supports a single run-level login, so this Google login
+  # cannot be active alongside the ElectricSheep login above. Flip skip to false
+  # (and swap the run credentials) to exercise it on its own.
+  - name: Log into Gmail and check email
+    id: gmail-login-check-email
+    skip: true
+    url: https://gmail.google.com/
+    steps:
+      - go to /
+      - when the Google sign-in screen appears, enter the account email and continue
+      - enter the account password and sign in
+      - wait for the Gmail inbox to finish loading
+      - open the most recent email in the inbox
+    criteria: >-
+      sign-in succeeds with the provided credentials and the Gmail inbox is
+      shown with the most recent emails visible
