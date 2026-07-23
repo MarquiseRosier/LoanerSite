@@ -7,7 +7,6 @@ testCases:
   # (and swap the run credentials) to exercise it on its own.
   - name: Log into Gmail and check email
     id: gmail-login-check-email
-    skip: true
     url: https://gmail.google.com/
     steps:
       - go to /
